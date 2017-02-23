@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %} Question: {{ questionTitle }} {% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		
+		<div class="jumbotron">
+			<h1>Update Question {{ questionTitle }}</h1>
+			<form name="questionForm" action="/question/{{ id }}" method="post" class="form-horizontal">
+				<input type="hidden" id="questionId" name="questionId" value="{{ questionId }}">
+				<div class="form-group">
+					<label for="questionTitle" class="col-sm-2 control-label lead">Question Title
+					</label>
+					<div class="col-sm-10">
+						<input type="text" name="questionTitle" value="{{ questionTitle }}" id="questionTitle">
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="tagString" class="col-sm-2 control-label lead">Tags:
+					</label>
+					<div class="col-sm-10">
+						<input type="text" name="tagString" value="{{ tagString }}" id="tagString">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-sm-2">&nbsp;</div>
+					<div class="col-sm-10">
+						<input type="submit" value="Add question" class="btn btn-primary">
+					</div>
+				</div>
+
+			</form>
+		</div>
+
+	</div>
+</div>
+{% endblock %}

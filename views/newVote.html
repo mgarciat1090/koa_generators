@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %} New Vote {% endblock %}
+
+{% block content %}
+<h1>{{ questionTitle }}</h1>
+<div class="container">
+	<div class="row">
+		
+		<div class="jumbotron">
+			<h1>Update Question {{ questionTitle }}</h1>
+			<form name="voteForm" action="/vote" method="post" class="form-horizontal">
+				<input type="hidden" id="tagString" name="tagString" value="{{ tagString }}"><input type="hidden" id="questionId" name="questionId" value="{{ questionId }}">
+				<input type="hidden" name="voteValue" id="voteValue" value="0">
+				
+				<div class="col-md-2">
+					<button type="button" onclick="submitVote(1)">
+						<img src="/images/1.svg" width="150px">
+					</button>
+				</div>
+
+				<div class="col-md-2">
+					<button type="button" onclick="submitVote(2)">
+						<img src="/images/2.svg" width="150px">
+					</button>
+				</div>
+
+				<div class="col-md-2">
+					<button type="button" onclick="submitVote(3)">
+						<img src="/images/3.svg" width="150px">
+					</button>
+				</div>
+
+				<div class="col-md-2">
+					<button type="button" onclick="submitVote(4)">
+						<img src="/images/4.svg" width="150px">
+					</button>
+				</div>
+
+				<div class="col-md-2">
+					<button type="button" onclick="submitVote(5)">
+						<img src="/images/5.svg" width="150px">
+					</button>
+				</div>
+
+			</form>
+			<script type="text/javascript">
+				function submitVote(vote){
+					document.getElementById('voteValue').value = vote;
+					voteForm.submit();
+				}
+
+			</script>
+		</div>
+
+	</div>
+</div>
+{% endblock %}

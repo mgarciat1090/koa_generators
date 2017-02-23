@@ -1,0 +1,28 @@
+{
+  "name": "DynKOA",
+  "version": "0.0.0",
+  "description": "A Dynamic backend based on koa",
+  "main": "index.js",
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha --harmony -u bdd -R spec",
+    "start": "node --harmony app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "co": "^4.6.0",
+    "co-body": "^4.2.0",
+    "co-monk": "^1.0.0",
+    "co-views": "^2.1.0",
+    "koa": "^1.2.5",
+    "koa-route": "^2.4.2",
+    "koa-static": "^2.1.0",
+    "monk": "^4.0.0",
+    "swig": "^1.4.2"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "should": "^11.2.0",
+    "supertest": "^3.0.0"
+  }
+}
